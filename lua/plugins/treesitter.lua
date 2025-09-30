@@ -21,6 +21,11 @@ return {
 				"sql",
 				"svelte",
 				"gdscript",
+				"typescript",
+			},
+
+			highlight = {
+				enable = true,
 			},
 
 			-- matchup = {

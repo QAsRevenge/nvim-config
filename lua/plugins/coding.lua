@@ -39,7 +39,6 @@ return {
 				keymap = {
 					jump_prev = "[[",
 					jump_next = "]]",
-					accept = "<Tab>",
 					refresh = "gr",
 					open = "<M-CR>",
 				},
@@ -105,6 +104,27 @@ return {
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
 		opts = {
+			prompts = {
+				ExplainThis = {
+					prompt = "Explain this code.",
+					system_prompt = "You are a senior level developer that specializes in exaplining code. Keep answers concise and to the point. Dont give any summary tables or use emojis. Use markdown formatting for any code snippets.",
+					mapping = "<leader>aie",
+					description = "Explain this code",
+				},
+				UnitTestThis = {
+					prompt = "Write unit tests for the following code.",
+					system_prompt = "You are a senior level developer that specializes in writing unit tests. Use the most appropriate testing framework for the language. Keep answers concise and to the point. Dont give any summary tables or use emojis. Use markdown formatting for any code snippets.",
+					mapping = "<leader>ait",
+					description = "Write unit tests for this code",
+				},
+				ImproveThis = {
+					prompt = "Improve this code.",
+					system_prompt = "You are a senior level developer that specializes in improving code. Focus on core coding principles, like simplicity, DRYness, maintanability and robustness. Keep answers concise and to the point. Dont give any summary tables or use emojis. Use markdown formatting for any code snippets.",
+					mapping = "<leader>aii",
+					description = "Improve this code",
+				},
+			},
+
 			-- See Configuration section for options
 		},
 		-- See Commands section for default commands if you want to lazy load on them

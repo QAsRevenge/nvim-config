@@ -75,7 +75,6 @@ end, {})
 -- Copilot
 keymap.set("n", "<C-c>", ":CopilotChat<CR>", { noremap = true, silent = true })
 keymap.set("v", "<C-c>", ":CopilotChat<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>cc", ":CopilotChatCommitStaged<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>ccq", ":lua CopilotBufferChat()<CR>", { noremap = true, silent = true })
 
 -- This allows you to select, and paste over contents, without that pasted over contents going into the register, that means you can paste again without it inserting the thing you pasted over the last time

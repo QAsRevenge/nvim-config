@@ -14,6 +14,9 @@ return {
 				"css-lsp",
 				"gdtoolkit",
 				"terraform-ls",
+				"kotlin-language-server",
+				"ktlint",
+				"bicep-lsp",
 			})
 		end,
 	},
@@ -25,6 +28,28 @@ return {
 			inlay_hints = { enabled = false },
 			---@type lspconfig.options
 			servers = {
+				kotlin_language_server = {
+					on_attach = function(client, bufnr)
+						-- Disable formatting capability to avoid conflicts with ktlint
+						client.server_capabilities.documentFormattingProvider = false
+					end,
+					settings = {
+						kotlin = {
+							compiler = {
+								jvm = {
+									target = "21",
+								},
+							},
+						},
+					},
+					single_file_support = true,
+				},
+				bicep_lsp = {
+					cmd = { vim.fn.stdpath("data") .. "/mason/bin/bicep-lsp" },
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
+					end,
+				},
 				cssls = {},
 				tailwindcss = {
 					root_dir = function(...)
@@ -58,23 +83,6 @@ return {
 								includeInlayFunctionLikeReturnTypeHints = true,
 								includeInlayEnumMemberValueHints = true,
 							},
-						},
-					},
-				},
-				gdscript = {
-					cmd = { "nc", "localhost", "6005" },
-					filetypes = { "gdscript" },
-					single_file_support = true,
-					init_options = {
-						gdscript = {
-							formatting = {
-								enable = true,
-								indent_size = 2,
-							},
-							enableCompletion = true,
-							enableDiagnostics = true,
-							enableHover = true,
-							enableSignatureHelp = true,
 						},
 					},
 				},
@@ -158,24 +166,19 @@ return {
 					},
 				},
 			},
+			["*"] = {
+				keys = {
+					{
+						"gd",
+						function()
+							require("telescope.builtin").lsp_definitions({ reuse_win = false })
+						end,
+						desc = "Goto Definition",
+						has = "definition",
+					},
+				},
+			},
 			setup = {},
 		},
-	},
-	{
-		"neovim/nvim-lspconfig",
-		opts = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-			vim.list_extend(keys, {
-				{
-					"gd",
-					function()
-						-- DO NOT RESUSE WINDOW
-						require("telescope.builtin").lsp_definitions({ reuse_win = false })
-					end,
-					desc = "Goto Definition",
-					has = "definition",
-				},
-			})
-		end,
 	},
 }

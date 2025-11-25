@@ -41,6 +41,7 @@ vim.opt.formatoptions:append({ "r" })
 
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
+vim.cmd([[au BufNewFile,BufRead *.bicep setf bicep]])
 
 if vim.fn.has("nvim-0.8") == 1 then
 	vim.opt.cmdheight = 0
@@ -56,3 +57,9 @@ vim.filetype.add({
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_cmp = "blink.cmp"
+
+local bicep_lsp_bin = "../../../../opts/bicep/Bicep.LangServer.dll"
+vim.lsp.config("bicep", {
+	cmd = { "dotnet", bicep_lsp_bin },
+	...,
+})

@@ -37,6 +37,7 @@ return {
 				enabled = true,
 				auto_refresh = false,
 				keymap = {
+					accept = "<CR>",
 					jump_prev = "[[",
 					jump_next = "]]",
 					refresh = "gr",
@@ -54,8 +55,8 @@ return {
 				debounce = 75,
 				keymap = {
 					accept = "<Tab>",
-					accept_word = false,
-					accept_line = false,
+					accept_word = "<M-Right>",
+					accept_line = "<M-Down>",
 					next = "<M-]>",
 					prev = "<M-[>",
 					dismiss = "<C-]>",
@@ -99,7 +100,7 @@ return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {
-			{ "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+			{ "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
 			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux

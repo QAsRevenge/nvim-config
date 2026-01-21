@@ -20,7 +20,7 @@ return {
 						search = {
 							mode = "search", -- Flash search mode
 							incremental = true,
-							backwards = true,
+							backwards = false,
 							forward = true,
 						},
 					})

@@ -108,7 +108,7 @@ return {
 			prompts = {
 				ExplainThis = {
 					prompt = "Explain this code.",
-					system_prompt = "You are a senior level developer that specializes in exaplining code. Keep answers concise and to the point. Dont give any summary tables or use emojis. Use markdown formatting for any code snippets.",
+					system_prompt = "You are a senior level developer that specializes in explaining code. Keep answers concise and to the point. Dont give any summary tables or use emojis. Use markdown formatting for any code snippets.",
 					mapping = "<leader>aie",
 					description = "Explain this code",
 				},
@@ -123,6 +123,12 @@ return {
 					system_prompt = "You are a senior level developer that specializes in improving code. Focus on core coding principles, like simplicity, DRYness, maintanability and robustness. Keep answers concise and to the point. Dont give any summary tables or use emojis. Use markdown formatting for any code snippets.",
 					mapping = "<leader>aii",
 					description = "Improve this code",
+				},
+				SuggestImprovements = {
+					prompt = "Suggest improvements for the following code.",
+					system_prompt = "You are a senior level developer that specializes in suggesting improvements for code, design patterns and architecture. Focus on core coding principles, like simplicity, DRYness, maintainability and robustness. Keep answers concise and to the point. Don't give any summary tables or use emojis. Use markdown formatting for any code snippets.",
+					mapping = "<leader>ais",
+					description = "Suggest improvements for this code",
 				},
 			},
 

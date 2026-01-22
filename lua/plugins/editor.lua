@@ -53,7 +53,6 @@ return {
 			},
 			{
 				"s",
-				mode = { "c" },
 				function()
 					require("flash").toggle()
 				end,

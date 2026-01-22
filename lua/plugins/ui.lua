@@ -39,6 +39,14 @@ return {
 					filter = {},
 				},
 			}
+			opts.views = {
+				cmdline_output = {
+					view = "popup",
+					border = { style = "rounded" },
+					position = { row = "50%", col = "80%" }, -- adjust as needed
+					size = { width = 60, height = "auto" },
+				},
+			}
 
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = "markdown",

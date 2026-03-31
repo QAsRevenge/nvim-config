@@ -1,29 +1,25 @@
 return {
-	"catppuccin/nvim",
+	"folke/tokyonight.nvim",
 	lazy = false,
-	flavor = "mocha", -- latte, frappe, macchiato, mocha
-	background = {
-		light = "latte",
-		dark = "mocha",
-	},
-	styles = {
-		comments = { "italic" },
-		conditionals = { "italic" },
-		loops = { "italic" },
-		functions = { "bold" },
-		keywords = { "bold" },
-		strings = {},
-		variables = {},
-		numbers = {},
-		booleans = {},
-		properties = {},
-		types = { "bold" },
-		operators = {},
-	},
 	priority = 1000,
 	config = function()
-		-- Optionally configure and load the colorscheme
-		-- directly inside the plugin declaration.
-		vim.cmd.colorscheme("catppuccin")
+		require("tokyonight").setup({
+			style = "storm", -- or "night", "moon", "day"
+			on_colors = function(colors)
+				colors.bg_dark = "#1a1b26"
+			end,
+			on_highlights = function(highlights, colors)
+				highlights.CursorLine = { bg = colors.bg_dark }
+			end,
+			styles = {
+				comments = { italic = true },
+				keywords = { italic = true },
+				functions = {},
+				variables = {},
+			},
+			transparent = false,
+			terminal_colors = true,
+		})
+		vim.cmd.colorscheme("tokyonight")
 	end,
 }

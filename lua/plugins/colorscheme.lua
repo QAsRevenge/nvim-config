@@ -17,7 +17,11 @@ return {
 				functions = {},
 				variables = {},
 			},
+<<<<<<< HEAD
 			transparent = true,
+=======
+			transparent = false,
+>>>>>>> cb8e9a6a60a0c1aeb4d3bd1609f8d7562c90b9a1
 			terminal_colors = true,
 		})
 		vim.cmd.colorscheme("tokyonight")

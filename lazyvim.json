@@ -1,22 +1,10 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.nvim-cmp",
-    "lazyvim.plugins.extras.coding.yanky",
-    "lazyvim.plugins.extras.editor.snacks_picker",
-    "lazyvim.plugins.extras.lang.kotlin",
-    "lazyvim.plugins.extras.lang.sql",
-    "lazyvim.plugins.extras.lang.terraform",
-    "lazyvim.plugins.extras.lang.yaml",
-    "lazyvim.plugins.extras.util.mini-hipatterns"
+
   ],
-  "install_version": 8,
   "news": {
     "NEWS.md": "11866",
-<<<<<<< HEAD
     "doc/news.txt": "23744"
-=======
-    "doc/news.txt": "25653"
->>>>>>> cb8e9a6a60a0c1aeb4d3bd1609f8d7562c90b9a1
   },
   "version": 8
 }

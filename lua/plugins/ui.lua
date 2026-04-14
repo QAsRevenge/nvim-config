@@ -164,15 +164,16 @@ return {
 	},
 	{
 		"folke/snacks.nvim",
+		---@type snacks.Config
 		priority = 1000,
 		lazy = false,
 		opts = {
 			explorer = {
+				replace_netrw = true,
 				enabled = true,
 				auto_close = true,
 				hidden = true,
 				layout = {
-					preset = "default",
 					preview = false,
 				},
 				hover = function(entry)
@@ -261,5 +262,18 @@ return {
 				},
 			},
 		},
+		keys = {
+			{
+				"<leader>e",
+				function()
+					Snacks.explorer.open()
+				end,
+				desc = "Snacks Explorer",
+			},
+		},
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		enabled = false,
 	},
 }

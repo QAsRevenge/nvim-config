@@ -17,10 +17,7 @@ return {
 				"kotlin-language-server",
 				"ktlint",
 				"bicep-lsp",
-<<<<<<< HEAD
 				"gopls",
-=======
->>>>>>> cb8e9a6a60a0c1aeb4d3bd1609f8d7562c90b9a1
 			})
 		end,
 	},
@@ -60,10 +57,7 @@ return {
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
-<<<<<<< HEAD
 				gopls = {},
-=======
->>>>>>> cb8e9a6a60a0c1aeb4d3bd1609f8d7562c90b9a1
 				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)

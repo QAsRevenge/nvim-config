@@ -175,6 +175,7 @@ return {
 				hidden = true,
 				layout = {
 					preview = false,
+					position = "right",
 				},
 				hover = function(entry)
 					if vim.g.snacks_hover_win and vim.api.nvim_win_is_valid(vim.g.snacks_hover_win) then

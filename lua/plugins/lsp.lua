@@ -21,6 +21,37 @@ return {
 			})
 		end,
 	},
+	{
+		"nvimtools/none-ls.nvim",
+		opts = function(_, opts)
+			local nls = require("null-ls")
+			opts.sources = opts.sources or {}
+			vim.list_extend(opts.sources, {
+				nls.builtins.formatting.ktlint,
+			})
+		end,
+		config = function(_, opts)
+			local null_ls = require("null-ls")
+			null_ls.setup(opts)
+
+			-- Format Kotlin files on save
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*.kt",
+				callback = function(args)
+					vim.lsp.buf.format({
+						bufnr = args.buf,
+						filter = function(client)
+							return client.name == "null-ls"
+						end,
+					})
+				end,
+			})
+		end,
+		dependencies = {
+			"mason-org/mason.nvim",
+			"williamboman/mason-null-ls.nvim",
+		},
+	},
 
 	-- lsp servers
 	{

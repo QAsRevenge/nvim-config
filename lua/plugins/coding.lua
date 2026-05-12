@@ -133,6 +133,20 @@ return {
 					mapping = "<leader>ais",
 					description = "Suggest improvements for this code",
 				},
+				AskAboutFile = {
+					prompt = "Answer questions about the current file. Use the file content as context.",
+					system_prompt = "You are an expert developer. Use the entire file as context to answer questions, provide suggestions, or refactor code. Be concise and use markdown formatting for code.",
+					mapping = "<leader>aif",
+					description = "Ask about current file",
+					context = "file",
+				},
+				AskAboutWorkspace = {
+					prompt = "Answer questions about the workspace. Use all relevant files as context.",
+					system_prompt = "You are an expert developer. Use the workspace/project files as context to answer questions, provide suggestions, or refactor code. Be concise and use markdown formatting for code.",
+					mapping = "<leader>aiw",
+					description = "Ask about workspace",
+					context = "workspace",
+				},
 			},
 
 			-- See Configuration section for options
@@ -147,6 +161,8 @@ return {
 			picker = "telescope",
 			-- bare Octo command opens picker of commands
 			enable_builtin = true,
+			github_hostname = "github.com",
+			ssh_aliases = { ["github.com-work"] = "github.com" },
 		},
 		keys = {
 			{

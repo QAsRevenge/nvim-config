@@ -1,4 +1,4 @@
-return {
+--[[return {
 	"folke/tokyonight.nvim",
 	lazy = false,
 	priority = 1000,
@@ -21,5 +21,41 @@ return {
 			terminal_colors = true,
 		})
 		vim.cmd.colorscheme("tokyonight")
+	end,
+}]]
+
+return {
+	"scottmckendry/cyberdream.nvim",
+	config = function()
+		require("cyberdream").setup({
+			lazy = false,
+			priority = 1000,
+			transparent = true,
+			italic_comments = true,
+			borderless_pickers = false,
+			terminal_colors = true,
+			saturation = 1.25,
+			cache = true,
+
+			highlights = {
+				CursorLine = { bg = "#111827" },
+
+				Visual = {
+					bg = "#00F7FF",
+					fg = "#0A0E14",
+				},
+
+				Search = {
+					bg = "#FF3D81",
+					fg = "#FFFFFF",
+				},
+
+				IncSearch = {
+					bg = "#00F7FF",
+					fg = "#0A0E14",
+				},
+			},
+		})
+		vim.cmd.colorscheme("cyberdream")
 	end,
 }

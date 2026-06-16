@@ -5,6 +5,9 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 
+vim.opt.winblend = 15
+vim.opt.pumblend = 15
+vim.opt.cursorline = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true

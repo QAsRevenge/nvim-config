@@ -61,7 +61,7 @@ vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_cmp = "blink.cmp"
 
-local bicep_lsp_bin = "../../../../opts/bicep/Bicep.LangServer.dll"
+local bicep_lsp_bin = "../../../../../../usr/local/bin/bicep-langserver/Bicep.LangServer.dll"
 vim.lsp.config("bicep", {
 	cmd = { "dotnet", bicep_lsp_bin },
 	...,

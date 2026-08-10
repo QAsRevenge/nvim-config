@@ -76,7 +76,7 @@ return {
 				cvs = false,
 				["."] = false,
 			},
-			copilot_node_command = "node", -- Node.js version must be > 20
+			copilot_node_command = "/Users/hampus.molin/.nvm/versions/node/v24.14.1/bin/node", -- Node.js version must be > 20
 			workspace_folders = {},
 			copilot_model = "gpt-41-copilot", -- Current LSP default is gpt-35-turbo, supports gpt-4o-copilot
 			root_dir = function()
@@ -108,6 +108,14 @@ return {
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
 		opts = {
+			model = "gpt-5.4-mini",
+			headers = {
+				user = "👤 You",
+				assistant = "🤖 Copilot",
+				tool = "🔧 Tool",
+			},
+			separator = "-",
+			auto_fold = true,
 			prompts = {
 				ExplainThis = {
 					prompt = "Explain this code.",

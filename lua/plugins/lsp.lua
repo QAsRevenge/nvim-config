@@ -9,15 +9,12 @@ return {
 				"luacheck",
 				"shellcheck",
 				"shfmt",
-				"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
-				"gdtoolkit",
 				"terraform-ls",
 				"kotlin-language-server",
 				"ktlint",
 				"bicep-lsp",
-				"gopls",
 			})
 		end,
 	},
@@ -83,12 +80,6 @@ return {
 					end,
 				},
 				cssls = {},
-				tailwindcss = {
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
-				},
-				gopls = {},
 				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
